@@ -48,8 +48,7 @@ Members can contribute ETH, the treasurer can withdraw, and all transactions are
 ---
 
 ## 📸 Demo
-- Etherscan: [Contract on Sepolia](<your-etherscan-link>)  
-- Video walkthrough: [YouTube Demo](<your-video-link>) *(optional)*  
+- Etherscan: [Contract on Sepolia](<https://sepolia.etherscan.io/address/0x43c9c8ced4655a2b7ee26d680935cb0d82bdf071#code>)  
 
 ---
 
