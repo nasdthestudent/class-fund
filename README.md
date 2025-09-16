@@ -1,57 +1,56 @@
-# Sample Hardhat 3 Beta Project (`mocha` and `ethers`)
+# ClassFund 🎓
 
-This project showcases a Hardhat 3 Beta project using `mocha` for tests and the `ethers` library for Ethereum interactions.
+A simple smart contract built with Solidity to help manage class funds in a transparent way.  
+Members can contribute ETH, the treasurer can withdraw, and all transactions are recorded on-chain.
 
-To learn more about the Hardhat 3 Beta, please visit the [Getting Started guide](https://hardhat.org/docs/getting-started#getting-started-with-hardhat-3). To share your feedback, join our [Hardhat 3 Beta](https://hardhat.org/hardhat3-beta-telegram-group) Telegram group or [open an issue](https://github.com/NomicFoundation/hardhat/issues/new) in our GitHub issue tracker.
+---
 
-## Project Overview
+## ✨ Features
+- Add members at deployment
+- Contribute ETH directly to the contract
+- Track individual contributions
+- Treasurer-only withdrawal
+- Events for every payment & withdrawal
+- (WIP) Period system for monthly payments
 
-This example project includes:
+---
 
-- A simple Hardhat configuration file.
-- Foundry-compatible Solidity unit tests.
-- TypeScript integration tests using `mocha` and ethers.js
-- Examples demonstrating how to connect to different types of networks, including locally simulating OP mainnet.
+## 🛠 Tech Stack
+- **Solidity** (smart contract language)
+- **Remix IDE** (for development & deployment)
+- **Metamask** (to interact with contract)
+- **Sepolia Testnet** (for testing on Ethereum network)
 
-## Usage
+---
 
-### Running Tests
+## 🚀 How to Deploy
+1. Open [Remix IDE](https://remix.ethereum.org/).
+2. Create a new file `ClassFund.sol` and paste the contract code.
+3. Compile with Solidity ^0.8.0.
+4. In **Deploy & Run Transactions**:
+   - Select **Injected Provider - Metamask**.
+   - Choose **Sepolia Testnet** in Metamask.
+   - Add the member addresses in the constructor.
+   - Deploy the contract.
 
-To run all the tests in the project, execute the following command:
+---
 
-```shell
-npx hardhat test
-```
+## 💡 How to Use
+### Contribute
+- Set the `value` field in Remix (e.g. `0.1 ether`)  
+- Call `pay()` function  
+- Your contribution will be recorded automatically  
 
-You can also selectively run the Solidity or `mocha` tests:
+### Withdraw (Treasurer only)
+- Call `withdraw(uint _amount)`  
+- `_amount` must be in **wei** (1 ether = 10^18 wei)  
 
-```shell
-npx hardhat test solidity
-npx hardhat test mocha
-```
+---
 
-### Make a deployment to Sepolia
+## 📸 Demo
+- Etherscan: [Contract on Sepolia](<your-etherscan-link>)  
+- Video walkthrough: [YouTube Demo](<your-video-link>) *(optional)*  
 
-This project includes an example Ignition module to deploy the contract. You can deploy this module to a locally simulated chain or to Sepolia.
+---
 
-To run the deployment to a local chain:
-
-```shell
-npx hardhat ignition deploy ignition/modules/Counter.ts
-```
-
-To run the deployment to Sepolia, you need an account with funds to send the transaction. The provided Hardhat configuration includes a Configuration Variable called `SEPOLIA_PRIVATE_KEY`, which you can use to set the private key of the account you want to use.
-
-You can set the `SEPOLIA_PRIVATE_KEY` variable using the `hardhat-keystore` plugin or by setting it as an environment variable.
-
-To set the `SEPOLIA_PRIVATE_KEY` config variable using `hardhat-keystore`:
-
-```shell
-npx hardhat keystore set SEPOLIA_PRIVATE_KEY
-```
-
-After setting the variable, you can run the deployment with the Sepolia network:
-
-```shell
-npx hardhat ignition deploy --network sepolia ignition/modules/Counter.ts
-```
+## 📂 Repo Structure
